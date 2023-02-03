@@ -1,0 +1,7 @@
+I am adding the file in this repository.
+
+const myCode = () => {
+  console.log("Welcome to GitHub");
+}
+
+myCode();
