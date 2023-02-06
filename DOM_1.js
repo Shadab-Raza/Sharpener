@@ -27,13 +27,14 @@
 // Using Different Selector for Selecting the Elements;
 
 // * GETELEMENTBYID
+//-----------------------------------------
 
     //M-1 (Without Using Variable)
-    // console.log(document.getElementById('header-title'));
+    //console.log(document.getElementById('header-title'));
 
     //M-2 (By Using Variable)
-    var headerTitle = document.getElementById('header-title');
-    var header = document.getElementById('main-header');
+    // var headerTitle = document.getElementById('header-title');
+    // var header = document.getElementById('main-header');
     // console.log (headerTitle);
 
     // headerTitle.textContent = 'Hello';  ---> Method one to write from js
@@ -42,20 +43,48 @@
     //headerTitle.style.color = 'black';
     //headerTitle.style.fontStyle = 'italic';
 
-    //console.log(headerTitle.innerHTML);
+    // console.log(headerTitle.innerHTML);
     // headerTitle.innerHTML = '<h3>Hello</h3>';   ---> Method three to write from js/
 
-    header.style.border = 'solid 3px black';
+    // header.style.border = 'solid 3px black';
     
 
 // * GETELEMENTBYCLASSNAME
-
+//-------------------------------------------------
     // Q.No 3
 
-    var title = document.getElementsByClassName('title');
-    console.log(title);
+    // var title = document.getElementsByClassName('title');
+    // console.log(title);
 
-    console.log(title[0]);
-    //title[0].textContent = "Hello";
-    title[0].style.fontWeight = "bold";
-    title[0].style.color = "green";
+    // console.log(title[0]);
+    // //title[0].textContent = "Hello";
+    // title[0].style.fontWeight = "bold";
+    // title[0].style.color = "green";
+
+
+     // TASK-4 Question-1
+
+    var items = document.getElementsByClassName('list-group-item');
+    console.log(items);
+
+    items[1].textContent = 'Second Item';
+    items[1].style.fontWeight = 'bold';
+    items[1].style.backgroundColor = 'yellow';
+
+    for (var i = 0; i < items.length; i++) {
+        items[i].style.backgroundColor = '#f4f4f4';
+    }
+
+
+    // TASK-4 Question-2
+    items[2].textContent = 'Third Item';
+    items[2].style.fontWeight = 'bold';
+    items[2].style.backgroundColor = 'green';
+
+
+
+    // TASK-4 Question-3
+    items[0].textContent = 'First Item';
+    items[0].style.fontWeight = 'bold';
+    items[3].textContent = 'Fourth Item';
+    items[3].style.fontWeight = 'bold';
