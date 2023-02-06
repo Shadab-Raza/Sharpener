@@ -1,11 +1,17 @@
 var form = document.getElementById('addForm');
 var itemList = document.getElementById('items');
+var filter = document.getElementById('filter')
 
 // form submit event
 form.addEventListener('submit', addItem);
 
 // Delete event
-itemList.addEventListener('click', removeItem)
+itemList.addEventListener('click', removeItem);
+
+// Filter event
+filter.addEventListener('keyup', filterItems);
+
+
 
 // Function for addItem
 function addItem(e) {
@@ -13,6 +19,7 @@ function addItem(e) {
 
     // Get input Value
     var newItem = document.getElementById('item').value;
+    var newItemTwo = document.getElementById('itemTwo').value;
 
     // Create new li element
     var li = document.createElement('li');
@@ -20,6 +27,7 @@ function addItem(e) {
     li.className = 'list-group-item';
     // Add text node with input value
     li.appendChild(document.createTextNode(newItem));
+    li.appendChild(document.createTextNode(newItemTwo));
 
     // Create del button element
     var deleteBtn = document.createElement('button');
@@ -49,6 +57,7 @@ function addItem(e) {
 }
 
 
+
 // Function for removeItem
 function removeItem(e) {
     e.preventDefault();
@@ -59,4 +68,23 @@ function removeItem(e) {
             itemList.removeChild(li);
         }
     }
+}
+
+
+// Function for filter
+function filterItems(e) {
+    // convert text to lowercase
+    var text = e.target.value.toLowerCase();
+    // Get lis
+    var items = itemList.getElementsByTagName('li');
+    // Converting HTML Collection to an array
+    Array.from(items).forEach(function(item){
+        var itemName = item.firstChild.textContent;
+        
+        if (itemName.toLocaleLowerCase().indexOf(text) != -1) {
+            item.style.display = 'block'; 
+        } else {
+            item.style.display = 'none';
+        }
+    })
 }
