@@ -41,6 +41,8 @@
             <input type="submit" id="submit" name="submit" value="GET A CALL">
             
         </form>
+
+        <ul id="listOfitems"></ul>
     </section>
 
 
@@ -53,20 +55,39 @@
             const date = event.target.date.value;
             const time = event.target.time.value;
 
-            localStorage.setItem ('name', name);
-            localStorage.setItem ('email', email);
-            localStorage.setItem ('date', date);
-            localStorage.setItem ('time', time);
+            // localStorage.setItem ('name', name);
+            // localStorage.setItem ('email', email);
+            // localStorage.setItem ('date', date);
+            // localStorage.setItem ('time', time);
 
 
             // Formating the data in string format
             const obj = {
                 name,
                 email,
-                phone
+                phone,
+                date,
+                time
             }
 
-            localStorage.setItem('userDetails', JSON.stringify(obj));
+            // localStorage.setItem('userDetails', JSON.stringify(obj));
+
+            // show the data on screen.
+            localStorage.setItem(obj.name, JSON.stringify(obj));
+            showUserOnScreen(obj);
+        }
+
+        function showUserOnScreen(obj) {
+            const parentElem = document.getElementById('listOfitems');
+
+            // Method-1
+            // const childElem = document.createElement('li');
+            // childElem.textContent = obj.name + ' - ' + obj.email + ' - ' + obj.phone + ' - ' + obj.date + ' - ' + obj.time;
+
+            // Method-2
+            parentElem.innerHTML = parentElem.innerHTML + `<li>${obj.name} - ${obj.email} - ${obj.phone} - ${obj.date} - ${obj.time}</li>`;
+
+            parentElem.appendChild(childElem);
         }
     </script>
 </body>
