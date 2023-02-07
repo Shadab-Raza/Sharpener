@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form_container {
+    width: 100%;
+    height: 100vh;
+    /* background: url(https://thumbs.dreamstime.com/b/torn-yellow-paper-letter-email-icon-white-background-email-marketing-newsletter-concept-contact-us-newsletter-email-216841579.jpg);
+    background-position: center;
+    background-size: cover; */
+    background: pink;
+    display: flex;
+    justify-content: center;  
+}
+
+.form_container form {
+    border: 2px solid orange;
+    border-radius: 10px;
+    background: transparent;
+    width: 60%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 15px;
+}
+
+.form_container form h1 {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.form_container form p {
+    text-align: center;
+
+}
+
+.form_container form .input_details {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+}
+
+.form_container form .input_details input {
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    outline: none;
+    border: 1px solid white;
+    padding: 8px;
+}
+
+.form_container form .timings {
+    display: flex;
+    flex-direction: row;
+}
+
+.form_container form .input_details .timing_fields{
+    display: flex;
+    gap: 15px;
+}
+
+.form_container form #submit{
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: orange;
+    color: white;
+    font-weight: 600;
+}
