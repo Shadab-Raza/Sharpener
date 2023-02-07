@@ -57,6 +57,16 @@
             localStorage.setItem ('email', email);
             localStorage.setItem ('date', date);
             localStorage.setItem ('time', time);
+
+
+            // Formating the data in string format
+            const obj = {
+                name,
+                email,
+                phone
+            }
+
+            localStorage.setItem('userDetails', JSON.stringify(obj));
         }
     </script>
 </body>
