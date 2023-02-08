@@ -73,7 +73,7 @@
             // localStorage.setItem('userDetails', JSON.stringify(obj));
 
             // show the data on screen.
-            localStorage.setItem(obj.name, JSON.stringify(obj));
+            localStorage.setItem(obj.email, JSON.stringify(obj));
             showUserOnScreen(obj);
         }
 
@@ -94,11 +94,30 @@
             deleteBtn.value = 'Delete';
 
             deleteBtn.onclick = () => {
-                localStorage.removeItem(obj.name);
+                localStorage.removeItem(obj.email);
                 parentElem.removeChild(childElem);
             }
 
-            childElem.appendChild(deleteBtn)
+
+            // edit btn added
+            const editBtn = document.createElement('input');
+            editBtn.type = 'button';
+            editBtn.value = 'Edit';
+
+            editBtn.onclick = () => {
+                localStorage.removeItem(obj.email);
+                parentElem.removeChild(childElem);
+
+                document.getElementById('name').value = obj.name;
+                document.getElementById('email').value = obj.email;
+                document.getElementById('phone').value = obj.phone;
+                document.getElementById('date').value = obj.date;
+                document.getElementById('time').value = obj.time;
+
+            }
+
+            childElem.appendChild(deleteBtn);
+            childElem.appendChild(editBtn);
             parentElem.appendChild(childElem);
         }
     </script>
