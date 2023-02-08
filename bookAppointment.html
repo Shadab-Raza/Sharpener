@@ -81,12 +81,24 @@
             const parentElem = document.getElementById('listOfitems');
 
             // Method-1
-            // const childElem = document.createElement('li');
-            // childElem.textContent = obj.name + ' - ' + obj.email + ' - ' + obj.phone + ' - ' + obj.date + ' - ' + obj.time;
+            const childElem = document.createElement('li');
+            childElem.textContent = obj.name + ' - ' + obj.email + ' - ' + obj.phone + ' - ' + obj.date + ' - ' + obj.time;
 
             // Method-2
-            parentElem.innerHTML = parentElem.innerHTML + `<li>${obj.name} - ${obj.email} - ${obj.phone} - ${obj.date} - ${obj.time}</li>`;
+            // parentElem.innerHTML = parentElem.innerHTML + `<li>${obj.name} - ${obj.email} - ${obj.phone} - ${obj.date} - ${obj.time}</li>`;
+            
 
+            // delete btn added in list
+            const deleteBtn = document.createElement('input');
+            deleteBtn.type = 'button';
+            deleteBtn.value = 'Delete';
+
+            deleteBtn.onclick = () => {
+                localStorage.removeItem(obj.name);
+                parentElem.removeChild(childElem);
+            }
+
+            childElem.appendChild(deleteBtn)
             parentElem.appendChild(childElem);
         }
     </script>

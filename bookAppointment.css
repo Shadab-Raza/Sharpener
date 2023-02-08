@@ -12,7 +12,9 @@
     background-size: cover; */
     background: pink;
     display: flex;
-    justify-content: center;  
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 
 .form_container form {
